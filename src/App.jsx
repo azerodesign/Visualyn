@@ -1,7 +1,7 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
 import {
   Menu, X, RefreshCw, Zap, PanelLeft, Loader2, Check, Rocket, CalendarClock,
-  ImageIcon, CornerDownRight, Plus, MessageSquare, Clock, LayoutGrid, Share2,
+  ImageIcon, CornerDownRight, Plus, MessageSquare, Clock, LayoutGrid, Share2, Upload,
   Wand2, Cloud, BookOpen, Settings, LogOut, Search, Calendar, Filter,
   Command, Bell, User, Star, Trash2, CheckCircle, Film, Palette, Stamp,
   Send, Smartphone, Activity, Hash, Edit2, Tag, HelpCircle
