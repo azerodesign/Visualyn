@@ -1,0 +1,301 @@
+/* stylelint-disable */
+@import "tailwindcss";
+@import "./tailwind-features.css";
+
+@font-face {
+  font-family: 'Guton';
+  src: url('./assets/fonts/Guton-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Guton';
+  src: url('./assets/fonts/Guton-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Guton';
+  src: url('./assets/fonts/Guton-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Guton';
+  src: url('./assets/fonts/Guton-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Guton';
+  src: url('./assets/fonts/Guton-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Green Theme Colors - Refined for Azero Style */
+  --primary: #22c55e;
+  --primary-light: #4ade80;
+  --primary-dark: #16a34a;
+  --primary-hover: #10b981;
+  --primary-glow: rgba(34, 197, 94, 0.3);
+
+  --bg-darkest: #0f172a;
+  --bg-dark: #111827;
+  --bg-card: #1e293b;
+  --bg-elevated: #334155;
+
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --radius: 0.625rem;
+  --sidebar-width: 16rem;
+  --sidebar-width-icon: 3rem;
+  --background: #0f172a;
+  --foreground: #f9fafb;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: rgba(15, 23, 42, 0.85);
+  /* Slightly less transparent for better readability */
+  --sidebar-foreground: #94a3b8;
+  --sidebar-primary: #22c55e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(255, 255, 255, 0.05);
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: rgba(255, 255, 255, 0.05);
+  --sidebar-ring: rgba(34, 197, 94, 0.5);
+}
+
+.sidebar-glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Global Sidebar Layout Fix - Removed as it was causing excessive gaps */
+
+body {
+  margin: 0;
+  background-color: var(--bg-darkest);
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Guton', sans-serif;
+}
+
+* {
+  font-family: 'Guton', sans-serif !important;
+}
+
+@media (min-width: 768px) {
+  body {
+    overflow: auto;
+    height: 100vh;
+  }
+}
+
+#root {
+  height: 100%;
+}
+
+/* Custom Scrollbar - Green Theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary-glow);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--primary-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 40px var(--primary-glow);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Premium UI Utilities */
+.navbar-glass {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.logo-container::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.logo-container:hover::after {
+  opacity: 0.4;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.token-badge {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.token-badge:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary-glow);
+}
+
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Smooth active state for buttons */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Focus styles - Green */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f9fafb;
+  --card: #1e293b;
+  --card-foreground: #f9fafb;
+  --popover: #1e293b;
+  --popover-foreground: #f9fafb;
+  --primary: #22c55e;
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: rgba(15, 23, 42, 0.85);
+  --sidebar-foreground: #94a3b8;
+  --sidebar-primary: #22c55e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(255, 255, 255, 0.05);
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: rgba(255, 255, 255, 0.05);
+  --sidebar-ring: rgba(34, 197, 94, 0.5);
+}
