@@ -4,7 +4,7 @@ import {
   ImageIcon, CornerDownRight, Plus, MessageSquare, Clock, LayoutGrid, Share2, Upload,
   Wand2, Cloud, BookOpen, Settings, LogOut, Search, Calendar, Filter,
   Command, Bell, User, Star, Trash2, CheckCircle, Film, Palette, Stamp,
-  Send, Smartphone, Activity, Hash, Edit2, Tag, HelpCircle
+  Send, Smartphone, Activity, Hash, Edit2, Tag, HelpCircle, Globe, HardDrive
 } from 'lucide-react';
 import { useAuth, AuthForm } from './components/Auth.jsx';
 import { ConnectTikTokButton } from './components/SocialPublish.jsx';
